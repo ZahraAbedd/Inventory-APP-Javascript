@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg-slate-800 min-h-screen">
+        <!-- App bar -->
+        <div class="mb-5 h-12 flex items-center justify-center gap-x-4 bg-slate-700">
+            <h1 class="text-xl font-bold text-slate-300">Invebtory APP With JS & Tailwind</h1>
+            <span class="flex justify-center items-center rounded-full w-7 h-7 border-2 border-t-slate-300 font-bold text-slate-300 bg-slate-500 ">7</span>
+        </div>
+        <!-- App Content -->
+        <div class="container max-w-screen-sm mx-auto">
+            <!-- Category Form -->
+            <section>
+                <div class="category-container hidden transition-all" id="category-wrapper">
+                    <h1 class="text-slate-300 mb-3 capitalize text-xl font-bold">add new category</h1>
+                    <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
+                        <div class="category-title-container">
+                            <label for="category-title" class="block font-bold mb-1 text-slate-400">Title</label>
+                            <input type="text" name="category-title" id="category-title" placeholder="Title" class="bg-transparent rounded-xl border border-slate-500 text-slate-400 ">
+                        </div>
+                        <div class="category-desc-container">
+                            <label for="category-desc" class="block font-bold mb-1 text-slate-400">Description</label>
+                            <textarea name="category-desc" id="category-desc"  class="bg-transparent rounded-xl w-full text-slate-400 border border-slate-500" id=""></textarea>
+                        </div>
+                        <div class="category-btns-container flex items-center justify-between gap-x-4">
+                            <button type="submit" class="btn category-add-cancel flex-1 bg-transparent text-slate-400 rounded-xl py-2 border border-slate-400 font-bold">Cancel</button>
+                            <button type="submit" class="btn category-add flex-1 bg-slate-300 text-slate-500 capitalize rounded-xl py-2 font-bold">Add new category</button>
+                        </div>
+                    </form>
+                </div>
+                <button id="toggle-add-category" class="text-slate-600 text-lg mb-4 font-medium">Add New Category</button>
+            </section>
+            <!-- Product Form -->
+            <div class="product-container">
+                <h1 class="text-slate-300 mb-2 capitalize text-xl font-bold">add new product</h1>
+                <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
+                    <div class="product-title-container">
+                        <label for="product-title"   class="block font-bold mb-1 text-slate-400">Product Title</label>
+                        <input type="text" name="product-title" class=" product-title bg-transparent rounded-xl border border-slate-500 text-slate-400 font-bold" placeholder="title..."/>
+                    </div>
+                    <div class="product-quantity-container">
+                        <label for="product-quantity"  class="block font-bold mb-1 text-slate-400">Quantity</label>
+                        <input type="number" class="product-quantity bg-transparent rounded-xl border border-slate-500 text-slate-400 font-bold" placeholder="quantity..."/>
+                    </div>
+                    <div class="product-category-container">
+                        <label for="product-category"  class="block font-bold mb-1 text-slate-400">Category</label>
+                        <select name="product-category" id="product-category" class="appearance-none  w-full bg-transparent rounded-xl border border-slate-500 text-slate-400 font-bold"></select>
+                    </div>
+                    <div class="product-add">
+                        <button type="submit" class="btn product-add flex-1 bg-slate-300 text-slate-500 capitalize rounded-xl py-2 font-bold w-full">Add new product</button>
+                    </div>
+                </form>
+            </div>
+            <!-- List Products -->
+            <div class="products py-5">
+                <h1 class="text-slate-500 mb-2 capitalize text-xl font-bold">Addedd Product</h1>
+                <div class="products-sort flex items-center justify-between my-3">
+                    <h4 class="text-slate-500 font-bold">Sort</h4>
+                    <select name="" id="products-filter" class="font-bold text-slate-400 bg-transparent rounded-xl border border-slate-400">
+                        <option class="bg-slate-500 text-slate-300" value="oldest">Oldest</option>
+                        <option class="bg-slate-500 text-slate-300" selected value="newest">Newest</option>
+                    </select>
+                </div>
+                <div class="product-search flex justify-between items-center my-6">
+                    <h4 class="text-slate-500 font-bold">Search</h4>
+                    <form>
+                        <input type="text" id="product-search" class="bg-transparent rounded-xl text-slate-400">
+                    </form>
+                </div>
+                <ul class="products-list text-slate-300">
+                </ul>
+            </div>
+        </div>
+    </div>
+   <script src="../src/js/app.js" type="module"></script>
+</body>
+</html>
